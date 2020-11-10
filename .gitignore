@@ -1,0 +1,15 @@
+gradlew
+gradlew.bat
+settings.gradle
+
+out/
+*.iml
+.gradle
+.idea
+.settings
+build
+gradle
+.class
+.html
+.classpath
+ConnectionManager.java
