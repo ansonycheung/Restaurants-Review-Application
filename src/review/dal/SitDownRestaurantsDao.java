@@ -216,16 +216,8 @@ public class SitDownRestaurantsDao extends RestaurantsDao {
 
 			// Then also delete from the superclass.
 			// Notes:
-			// 1. Due to the fk constraint (ON DELETE CASCADE), we could simply call
-			// super.delete() without even needing to delete from Administrators first.
-			// 2. BlogPosts has a fk constraint on BlogUsers with the reference option
-			// ON DELETE SET NULL. If the BlogPosts fk reference option was instead
-			// ON DELETE RESTRICT, then the caller would need to delete the referencing
-			// BlogPosts before this BlogUser can be deleted.
-			// Example to delete the referencing BlogPosts:
-			// List<BlogPosts> posts =
-			// BlogPostsDao.getBlogPostsForUser(blogUser.getUserName());
-			// for(BlogPosts p : posts) BlogPostsDao.delete(p);
+			// Due to the fk constraint (ON DELETE CASCADE), we could simply call
+			// super.delete() without even needing to delete from Restaurants first.
 			super.delete(sitDownRestaurant);
 
 			return null;

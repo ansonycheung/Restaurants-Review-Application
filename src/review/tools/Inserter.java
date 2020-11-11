@@ -1,6 +1,7 @@
 package review.tools;
 
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -10,9 +11,9 @@ import review.model.*;
 /**
  * main() runner, used for the app demo.
  * 
- * Instructions: 1. Create a new MySQL schema and then run the CREATE TABLE
- * statements from lecture: http://goo.gl/86a11H. 2. Update ConnectionManager
- * with the correct user, password, and schema.
+ * Instructions:
+ * 1. Create a new MySQL schema and then run the CREATE TABLE statements from lecture: 
+ * 2. Update ConnectionManager with the correct user, password, and schema.
  */
 public class Inserter {
 
@@ -37,11 +38,17 @@ public class Inserter {
 		Users user3 = new Users("b3", "password", "bruce", "chhay", "bruce@mail", "5555555");
 		user3 = usersDao.create(user3);
 
-		Date date = new Date();
+		Calendar cal = Calendar.getInstance();
+		cal.set(2025, 9, 3);
+		Date date = cal.getTime();
 		CreditCards creditCard1 = new CreditCards(8888123456780001L, date, "b1");
 		creditCard1 = creditCardsDao.create(creditCard1);
+		cal.set(2022, 10, 20);
+		date = cal.getTime();
 		CreditCards creditCard2 = new CreditCards(8888123456780002L, date, "b1");
 		creditCard2 = creditCardsDao.create(creditCard2);
+		cal.set(2023, 11, 22);
+		date = cal.getTime();
 		CreditCards creditCard3 = new CreditCards(8888123456780003L, date, "b1");
 		creditCard3 = creditCardsDao.create(creditCard3);
 
@@ -51,34 +58,6 @@ public class Inserter {
 		company2 = companiesDao.create(company2);
 		Companies company3 = new Companies("c3", "about c3");
 		company3 = companiesDao.create(company3);
-
-		Restaurants restaurant1 = new Restaurants("r1", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company1);
-		restaurant1 = restaurantsDao.create(restaurant1);
-		Restaurants restaurant2 = new Restaurants("r2", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company1);
-		restaurant2 = restaurantsDao.create(restaurant2);
-		Restaurants restaurant3 = new Restaurants("r3", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company1);
-		restaurant3 = restaurantsDao.create(restaurant3);
-		Restaurants restaurant4 = new Restaurants("r4", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company2);
-		restaurant4 = restaurantsDao.create(restaurant4);
-		Restaurants restaurant5 = new Restaurants("r5", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company2);
-		restaurant5 = restaurantsDao.create(restaurant5);
-		Restaurants restaurant6 = new Restaurants("r6", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company2);
-		restaurant6 = restaurantsDao.create(restaurant6);
-		Restaurants restaurant7 = new Restaurants("r7", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company3);
-		restaurant7 = restaurantsDao.create(restaurant7);
-		Restaurants restaurant8 = new Restaurants("r8", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company3);
-		restaurant8 = restaurantsDao.create(restaurant8);
-		Restaurants restaurant9 = new Restaurants("r9", "about restaurant", "menu", "hours", true,
-				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company3);
-		restaurant9 = restaurantsDao.create(restaurant9);
 
 		SitDownRestaurants sitDownRestaurant1 = new SitDownRestaurants(1, "r1", "about restaurant", "menu", "hours",
 				true, Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company1, 100);
@@ -110,6 +89,34 @@ public class Inserter {
 				false, Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company3, true);
 		foodCartRestaurant3 = foodCartRestaurantsDao.create(foodCartRestaurant3);
 
+		Restaurants restaurant1 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company1);
+		restaurant1 = restaurantsDao.create(restaurant1);
+		Restaurants restaurant2 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company1);
+		restaurant2 = restaurantsDao.create(restaurant2);
+		Restaurants restaurant3 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company1);
+		restaurant3 = restaurantsDao.create(restaurant3);
+		Restaurants restaurant4 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company2);
+		restaurant4 = restaurantsDao.create(restaurant4);
+		Restaurants restaurant5 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company2);
+		restaurant5 = restaurantsDao.create(restaurant5);
+		Restaurants restaurant6 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company2);
+		restaurant6 = restaurantsDao.create(restaurant6);
+		Restaurants restaurant7 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AFRICAN, "street1", "street2", "seattle", "wa", 98195, company3);
+		restaurant7 = restaurantsDao.create(restaurant7);
+		Restaurants restaurant8 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.AMERICAN, "street1", "street2", "seattle", "wa", 98195, company3);
+		restaurant8 = restaurantsDao.create(restaurant8);
+		Restaurants restaurant9 = new Restaurants("r", "about restaurant", "menu", "hours", true,
+				Restaurants.CuisineType.ASIAN, "street1", "street2", "seattle", "wa", 98195, company3);
+		restaurant9 = restaurantsDao.create(restaurant9);
+		
 		Reviews review1 = new Reviews(date, "Delightful!", 5.0, user1, restaurant1);
 		review1 = reviewsDao.create(review1);
 		Reviews review2 = new Reviews(date, "Superb!", 5.0, user1, restaurant2);
@@ -140,16 +147,22 @@ public class Inserter {
 		Recommendations recommendation9 = new Recommendations(user3, restaurant5);
 		recommendation9 = recommendationsDao.create(recommendation9);
 
-		Reservations reservation1 = new Reservations(date, date, 2, user1, sitDownRestaurant1);
+		cal.set(2020, 11, 15, 18, 30);
+		Date start = cal.getTime();
+		cal.set(2020, 11, 15, 20, 30);
+		Date end = cal.getTime();
+		Reservations reservation1 = new Reservations(start, end, 2, user1, sitDownRestaurant1);
 		reservation1 = reservationsDao.create(reservation1);
-		Reservations reservation2 = new Reservations(date, date, 2, user1, sitDownRestaurant2);
+		Reservations reservation2 = new Reservations(start, end, 2, user1, sitDownRestaurant2);
 		reservation2 = reservationsDao.create(reservation2);
-		Reservations reservation3 = new Reservations(date, date, 2, user2, sitDownRestaurant1);
+		Reservations reservation3 = new Reservations(start, end, 2, user2, sitDownRestaurant1);
 		reservation3 = reservationsDao.create(reservation3);
-		Reservations reservation4 = new Reservations(date, date, 2, user2, sitDownRestaurant2);
+		Reservations reservation4 = new Reservations(start, end, 2, user2, sitDownRestaurant2);
 		reservation4 = reservationsDao.create(reservation4);
-		Reservations reservation5 = new Reservations(date, date, 2, user3, sitDownRestaurant1);
+		Reservations reservation5 = new Reservations(start, end, 2, user3, sitDownRestaurant1);
 		reservation5 = reservationsDao.create(reservation5);
+		Reservations reservation6 = new Reservations(start, end, 2, user3, sitDownRestaurant3);
+		reservation6 = reservationsDao.create(reservation6);
 
 		// READ.
 		System.out.println("Test get methods");
@@ -346,11 +359,12 @@ public class Inserter {
 		// UPDATE
 		// CreditCardsDao: updateExpiration(CreditCards creditCard, Date newExpiration)
 		System.out.println("Test update methods");
-		Date newDate = new Date();
+		cal.set(2027, 11, 11);
+		Date newDate = cal.getTime();
 		System.out.format("Reading credit card by card number (8888123456780001): cn:%s e:%s u:%s \n",
 				card1.getCardNumber(), card1.getExpiration(), card1.getUserName());
 		creditCard1 = creditCardsDao.updateExpiration(creditCard1, newDate);
-		System.out.format("Reading updated credit card: Cn:%s e:%s u:%s \n",
+		System.out.format("Reading updated credit card by new expiration: Cn:%s e:%s u:%s \n",
 				creditCard1.getCardNumber(),
 				creditCard1.getExpiration(), 
 				creditCard1.getUserName());
@@ -372,8 +386,8 @@ public class Inserter {
 		sitDownRestaurantsDao.delete(sitDownRestaurant2);
 		takeOutRestaurantsDao.delete(takeOutRestaurant1);
 		foodCartRestaurantsDao.delete(foodCartRestaurant1);
-		reviewsDao.delete(review1);
-		recommendationsDao.delete(recommendation1);
+		reviewsDao.delete(review5);
+		recommendationsDao.delete(recommendation9);
 		reservationsDao.delete(reservation1);
 	}
 }
