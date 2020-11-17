@@ -47,7 +47,7 @@
 <ul>
   <li>Make sure ConnectionManager.java is created.</li>
   <li>Make sure MySQL is running.</li>
-  <li>Create empty tables, e.g.</li>
+  <li>Create empty tables, e.g. https://github.com/ansonycheung/Restaurants-Review-Application/blob/master/ReviewApplication.sql</li>
   <li>Right click Inserter.java: Run As > Java Application.</li>
   <li>View "Console" output.</li>
   <li>Verify data in Workbench.</li>
